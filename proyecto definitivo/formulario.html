@@ -34,6 +34,64 @@
             padding: 1rem 0;
             text-align: center;
         }
+
+        /* Estilos mejorados para los selectores */
+        .form-select {
+            background-color: #f0f8ff;  /* Fondo azul claro */
+            border-color: #007bff;  /* Borde azul */
+            color: #333;  /* Color del texto */
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-select:focus {
+            background-color: #e0f7fa;  /* Fondo más claro al seleccionar */
+            border-color: #007bff;
+            box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+        }
+
+        /* Estilo del botón Enviar */
+        .btn-success {
+            background-color: #28a745;  /* Verde brillante */
+            border-color: #218838;
+            color: white;
+            padding: 12px 20px;
+            font-size: 1.1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+
+        .btn-success:hover {
+            background-color: #218838;
+            border-color: #1e7e34;
+        }
+
+        /* Aumentamos el margen superior de los elementos de formulario */
+        .form-container label {
+            font-weight: bold;
+            color: #333;
+            margin-top: 20px;
+        }
+
+        /* Estilo mejorado para los inputs numéricos */
+        input[type="number"] {
+            background-color: #f0f8ff;
+            border-color: #007bff;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 1rem;
+            width: 100%;
+            margin-top: 10px;
+            transition: all 0.3s ease;
+        }
+
+        input[type="number"]:focus {
+            background-color: #e0f7fa;
+            border-color: #007bff;
+            box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+        }
     </style>
 </head>
 
@@ -62,92 +120,93 @@
     <!-- Formulario -->
     <div class="container text-center">
         <div class="row align-items-center">
-            <div class="col">
-            </div>
-            <div class="col">
-                <label for="">
-                    Edad
-                </label>
-                <input type="number" id="edad" min="0" max="130" class="form-control" step="0.1">
-                <label for="" class="mt-4">
-                    Género
-                </label>
-                <select id="genero" class="form-select">
-                    <option value="0">Seleccione una opción</option>
-                    <option value="1">Masculino</option>
-                    <option value="2">Femenino</option>
-                    <option value="3">Otro</option>
-                </select>
-                <label for="" class="mt-4">
-                    Hipertenso
-                </label>
-                <select id="hipertenso" class="form-select">
-                    <option value="0">Seleccione una opción</option>
-                    <option value="1">Sí</option>
-                    <option value="2">No</option>
-                </select>
-                <label for="" class="mt-4">
-                    ¿Enfermedad del corazón?
-                </label>
-                <select id="corazon" class="form-select">
-                    <option value="0">Seleccione una opción</option>
-                    <option value="1">Sí</option>
-                    <option value="2">No</option>
-                </select>
-                <label for="" class="mt-4">
-                    ¿Es casado?
-                </label>
-                <select name="" id="casado" class="form-select">
-                    <option value="0">Seleccione una opción</option>
-                    <option value="1">Sí</option>
-                    <option value="2">No</option>
-                </select>
-                <label for="" class="mt-4">
-                    ¿Tipo de trabajo?
-                </label>
-                <select name="" id="trabajo" class="form-select">
-                    <option value="0">Seleccione una opción</option>
-                    <option value="1">Niños</option>
-                    <option value="2">Empleo gubernamental</option>
-                    <option value="3">Nunca trabajó</option>
-                    <option value="4">Privado</option>
-                    <option value="5">Autónomo</option>
-                </select>
-                <label for="" class="mt-4">
-                    ¿Tipo de residencia?
-                </label>
-                <select name="" id="residencia" class="form-select">
-                    <option value="0">Seleccione una opción</option>
-                    <option value="1">Rural</option>
-                    <option value="2">Urbana</option>
-                </select>
-                <label for="" class="mt-4">
-                    Nivel de glucosa:
-                </label>
-                <input type="number" name="" id="glucosa" min="0" max="500" class="form-control" step="0.1">
-                <label for="" class="mt-4">
-                    Índice de masa corporal:
-                </label>
-                <input type="number" name="" id="imc" min="0" max="100" class="form-control" step="0.1">
-                <label for="" class="mt-4">
-                    Fumador
-                </label>
-                <select name="" id="fumador" class="form-select">
-                    <option value="0">Seleccione una opción</option>
-                    <option value="1">Sí</option>
-                    <option value="2">No</option>
-                </select>
-                <button onclick="consumoApi()" type="button" class="btn btn-success mt-4">Enviar</button>
+            <div class="col-12">
+                <div class="form-container">
+                    <h2 class="form-heading">Formulario de Salud</h2>
 
-                <div class="mt-4" id="respuesta">
-                    Respuesta:
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="edad">Edad</label>
+                            <input type="number" id="edad" min="0" max="130" class="form-control" step="0.1">
+                            
+                            <label for="genero" class="mt-4">Género</label>
+                            <select id="genero" class="form-select">
+                                <option value="0">Seleccione una opción</option>
+                                <option value="1">Masculino</option>
+                                <option value="2">Femenino</option>
+                                <option value="3">Otro</option>
+                            </select>
+
+                            <label for="hipertenso" class="mt-4">Hipertenso</label>
+                            <select id="hipertenso" class="form-select">
+                                <option value="0">Seleccione una opción</option>
+                                <option value="1">Sí</option>
+                                <option value="2">No</option>
+                            </select>
+
+                            <label for="casado" class="mt-4">¿Es casado?</label>
+                            <select id="casado" class="form-select">
+                                <option value="0">Seleccione una opción</option>
+                                <option value="1">Sí</option>
+                                <option value="2">No</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="corazon" class="mt-4">¿Enfermedad del corazón?</label>
+                            <select id="corazon" class="form-select">
+                                <option value="0">Seleccione una opción</option>
+                                <option value="1">Sí</option>
+                                <option value="2">No</option>
+                            </select>
+
+                            <label for="trabajo" class="mt-4">¿Tipo de trabajo?</label>
+                            <select id="trabajo" class="form-select">
+                                <option value="0">Seleccione una opción</option>
+                                <option value="1">Niños</option>
+                                <option value="2">Empleo gubernamental</option>
+                                <option value="3">Nunca trabajó</option>
+                                <option value="4">Privado</option>
+                                <option value="5">Autónomo</option>
+                            </select>
+
+                            <label for="residencia" class="mt-4">¿Tipo de residencia?</label>
+                            <select id="residencia" class="form-select">
+                                <option value="0">Seleccione una opción</option>
+                                <option value="1">Rural</option>
+                                <option value="2">Urbana</option>
+                            </select>
+
+                            <label for="glucosa" class="mt-4">Nivel de glucosa:</label>
+                            <input type="number" id="glucosa" min="0" max="500" class="form-control" step="0.1">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="imc" class="mt-4">Índice de masa corporal:</label>
+                            <input type="number" id="imc" min="0" max="100" class="form-control" step="0.1">
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="fumador" class="mt-4">Fumador</label>
+                            <select id="fumador" class="form-select">
+                                <option value="0">Seleccione una opción</option>
+                                <option value="1">Sí</option>
+                                <option value="2">No</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button onclick="consumoApi()" type="button" class="btn btn-success mt-4">Enviar</button>
+
+                    <div class="mt-4" id="respuesta">
+                        Respuesta:
+                    </div>
                 </div>
-            </div>
-            <div class="col">
             </div>
         </div>
     </div>
-
 
     <!-- Footer -->
     <footer>
